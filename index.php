@@ -1,3 +1,10 @@
+<?php 
+ function imgc(){
+     
+     
+ }
+
+?>
 
 <html> 
 
@@ -5,7 +12,7 @@
         <title></title>
         <?php 
 
-	    echo "<h1> Search Photo <h1>";
+	echo "<h1> Search Photo <h1>";
         echo "<br>";
 ?>
         
@@ -13,12 +20,9 @@
     
     
     
-    <body tyle="text-align: center"  > 
+    <body style="text-align: center"  > 
     
-        <div center: >
-
-             <div  >
-                 
+        <div  >
             <input type="submit" value="Search" name="sum" />
             <br>
             <input type="search" value="Change" name="srh" />
