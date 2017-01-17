@@ -6,15 +6,25 @@ and open the template in the editor.
 /* 
     Created on : Jan 12, 2017, 5:42:13 PM
     Author     : mosa
+old body style="background-color: #fff; text-align: center;
 */
 
-.h1 {
-    color: blue;
-    border: 1px gray solid;
-    
+body,h1 {
+    font-family: "Raleway", sans-serif
 }
-.body {
-    text-align: center;
+body, html {
+    height: 100%
+}
+.bgimg {
     
+    background-image: url('../imgs/earth.jpg');
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+}
 
+.DDimg{
+    width: 20%; 
+    height: 20%; 
 }
+
