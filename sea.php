@@ -1,41 +1,34 @@
-<?php $copyname = "MOSA" ?>
-<!--    
-#    <?php 
-#    $seas = arrar('sea1.jpg','sea2.jpg','sea3.jpg','sea4.jpg','sea5.jpg');
-#    
-#    foreach ($seas as $seas){
-#    }
-#        echo '<img class="mySlides" src="/imges/seas/$seas" style="width:100%">';
-#    ?>
-   -->
-<html> 
-
-   <head>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-        <title>Earth Seas</title>
-    </head>
-  <body style="text-align: center"  > 
+<?php include('includes/header.php'); ?>
+    
+<?php include('script.php'); ?>
+<style>
+.mySlides {display:none}
+.demo {cursor:pointer}
+</style>
+<body  class="bgimg"style="text-align: center"  > 
         
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-     <div class="w3-display-topleft w3-padding-large w3-xlarge">
-      &COPY; <?php echo $copyname; ?>
-     </div >
-  
-  <div class="w3-display-middle>
- 
-  <img class="mySlides bgimg" src="/imgs/seas/sea1.jpg" style="width:100%">
-  <img class="mySlides bgimg" src="/imgs/seas/sea2.jpg" style="width:100%">
-  <img class="mySlides bgimg" src="/imgs/seas/sea3.jpg" style="width:100%">
-  <img class="mySlides bgimg" src="/imgs/seas/sea4.jpg" style="width:100%">
-  <img class="mySlides bgimg" src="/imgs/seas/sea5.jpg" style="width:100%">
-  
-  <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
-  <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>
-  </div>
-  
+
+
+<div class="w3-content w3-display-top" style="max-width:1000px">
+    
+    <img class="mySlides" src="/imgs/Air/air.jpg" style="max-width:100%">
+    <img class="mySlides" src="/imgs//landes/land1.jpg" style="max-width:100%">
+    <img class="mySlides" src="/imgs//seas//sea1.jpg" style="max-width:100%">
 </div>
-          <script>
+ <div class="w3-row-padding w3-section w3-display-bottommiddle">
+    <div class="w3-col s4">
+        <img class="demo w3-opacity w3-hover-opacity-off w3-round-xxlarge" src="/imgs/Air/air.jpg" style="max-width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s4">
+        <img class="demo w3-opacity w3-hover-opacity-off w3-round-xxlarge" src="/imgs//landes/land1.jpg" style="max-width:100% " onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+        <img class="demo w3-opacity w3-hover-opacity-off w3-round-xxlarge" src="/imgs//seas//sea1.jpg" style="max-width:100%" onclick="currentDiv(3)">
+    </div>
+  </div>
+
+
+ <script>
               
 var slideIndex = 1;
 showDivs(slideIndex);
@@ -44,19 +37,27 @@ function plusDivs(n) {
   showDivs(slideIndex += n);
 }
 
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
-  if (n > x.length) {slideIndex = 1}    
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}
   if (n < 1) {slideIndex = x.length}
   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";  
+     x[i].style.display = "none";
   }
-  x[slideIndex-1].style.display = "block";  
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
 }
 </script>
     
     </body>
+<?php include('includes/footer.php'); ?>
 
-
-</html>
